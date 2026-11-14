@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lilian Vanini Atelier · Artesanato feito à mão</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Caveat:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fffafc;--card:#fff;--ink:#43294a;--mut:#84708a;--pri:#f6bcd3;--pri2:#d3c1f3;--acc:#a23d72;--soft:#f5ecfb;--peach:#ffdcc8;--mint:#d2f0e6;--line:#f0e1f2;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1f1424;--card:#2c1c33;--ink:#fbeaf6;--mut:#c9b0d0;--pri:#e9a9c6;--pri2:#bda7e6;--acc:#f3a6c9;--soft:#382445;--line:#4a3357}}
+:root[data-theme="dark"]{--bg:#1f1424;--card:#2c1c33;--ink:#fbeaf6;--mut:#c9b0d0;--pri:#e9a9c6;--pri2:#bda7e6;--acc:#f3a6c9;--soft:#382445;--line:#4a3357}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 'DM Sans',system-ui,sans-serif}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;margin:0;line-height:1.1}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:800 clamp(18px,6vw,30px) 'Bricolage Grotesque',sans-serif;color:var(--acc);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:60vw}
+.cartbtn{background:var(--pri);color:var(--ink);border:0;border-radius:99px;padding:8px 16px;font-weight:700;flex-shrink:0}
+header .bar{height:auto;min-height:60px;padding:10px 0}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--pri2),var(--pri) 55%,var(--peach));color:var(--ink);padding:52px 0 40px;border-radius:0 0 40px 40px}
+.blob{position:absolute;border-radius:50%;filter:blur(2px);opacity:.55;animation:float 7s ease-in-out infinite}
+.b1{width:120px;height:120px;background:var(--mint);top:-30px;right:8%;animation-delay:.2s}
+.b2{width:70px;height:70px;background:var(--card);bottom:10px;right:26%;animation-delay:1.4s}
+.b3{width:44px;height:44px;background:var(--acc);opacity:.3;top:40%;right:4%;animation-delay:.8s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.hero .inner{opacity:0;transform:translateY(14px);animation:rise .7s ease forwards .1s}
+@keyframes rise{to{opacity:1;transform:none}}
+.tag{display:inline-block;background:var(--card);color:var(--acc);font-weight:700;font-size:13px;padding:6px 14px;border-radius:99px;margin-bottom:14px}
+.hero h1{font-size:clamp(34px,8vw,60px);font-weight:800;max-width:15ch;position:relative;z-index:1}
+.hero h1 em{font:700 1.15em 'Caveat',cursive;font-style:normal;color:var(--acc)}
+.hero p{max-width:40ch;margin:14px 0 24px;font-size:18px;position:relative;z-index:1}
+.cta{display:inline-block;background:var(--card);color:var(--ink);border:0;border-radius:99px;padding:13px 26px;font-weight:700;text-decoration:none;transition:transform .15s}
+.cta:hover{transform:translateY(-2px)}
+.stats{display:flex;gap:28px;margin-top:30px;flex-wrap:wrap;position:relative;z-index:1}
+.stats b{display:block;font:800 26px 'Bricolage Grotesque',sans-serif}
+.stats span{font-size:13px;opacity:.8}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0 16px}
+.tools input{flex:1 1 200px;padding:11px 16px;border:1.5px solid var(--line);border-radius:99px;background:var(--card)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.chip{white-space:nowrap;border:1.5px solid var(--line);background:var(--card);border-radius:99px;padding:8px 16px}
+.chip.on{background:var(--pri2);color:var(--ink);border-color:var(--pri2)}
+.cwrap{overflow:hidden;margin:20px 0 12px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.carousel{display:flex;gap:14px;width:max-content;padding:4px 4px 12px;animation:train 28s linear infinite}
+.cwrap:hover .carousel,.cwrap:active .carousel{animation-play-state:paused}
+@keyframes train{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.carousel{animation:none;overflow-x:auto}}
+.cItem{flex:0 0 150px;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;text-align:left;border-width:1px}
+.cItem .ph{aspect-ratio:1;font-size:48px}
+.cItem .cb{padding:10px}
+.cItem .cb small{color:var(--mut);display:block}
+.cItem .cb b{font-size:14px;display:block;margin:2px 0}
+.cItem .cb span{color:var(--acc);font-weight:800}
+.pd-img{aspect-ratio:1;border-radius:18px;background:var(--soft);display:grid;place-items:center;font-size:100px;background-size:cover;background-position:center;margin-bottom:14px}
+.pd-desc{color:var(--mut);margin:8px 0}
+.stitle{font-size:clamp(24px,4vw,32px);margin:36px 0 4px}
+.ssub{color:var(--mut);margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px;margin-bottom:40px}
+.p{position:relative;background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.p:hover{transform:translateY(-5px);box-shadow:0 14px 26px -14px rgba(162,61,114,.35)}
+.badge{position:absolute;top:10px;left:10px;background:var(--acc);color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:99px;z-index:1}
+.badge.oos{background:#8a8390}
+.add[disabled],.big[disabled]{opacity:.5;cursor:not-allowed}
+.chk{display:flex;align-items:center;gap:8px;margin:10px 0;font-size:14px}
+.chk input{width:auto}
+.ph{aspect-ratio:1;display:grid;place-items:center;font-size:72px;background:linear-gradient(135deg,var(--soft),var(--pri2));background-size:cover;background-position:center}
+.pb{padding:14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.pb small{color:var(--mut)}
+.stars{color:var(--acc);font-size:13px;letter-spacing:1px}
+.price{font:800 20px 'Bricolage Grotesque',sans-serif;color:var(--acc)}
+.add{margin-top:auto;background:var(--pri);color:var(--ink);border:0;border-radius:12px;padding:11px;font-weight:700;transition:background .15s}
+.add:hover{background:var(--acc);color:#fff}
+.empty{grid-column:1/-1;text-align:center;color:var(--mut);padding:30px}
+.ov{position:fixed;inset:0;background:rgba(60,30,70,.4);z-index:9;display:none}
+.ov.open{display:block}
+.pan{position:absolute;right:0;top:0;bottom:0;width:min(440px,100%);background:var(--bg);padding:calc(16px + env(safe-area-inset-top,0px)) 16px calc(16px + env(safe-area-inset-bottom,0px));overflow-y:auto}
+.ph2{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.x{background:var(--soft);border:0;border-radius:50%;width:36px;height:36px}
+.row{display:flex;gap:8px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.row .x{flex-shrink:0}
+.row .em{font-size:30px}
+.row .t{flex:1;min-width:0}
+.qty button{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--line);background:var(--card)}
+label{display:block;font-weight:500;margin:10px 0 4px;font-size:14px}
+.f input,.f select{width:100%;padding:10px 12px;border:1.5px solid var(--line);border-radius:12px;background:var(--card)}
+.sum{background:var(--soft);border-radius:16px;padding:12px 14px;margin:14px 0}
+.sum div{display:flex;justify-content:space-between}
+.tot{font:800 20px 'Bricolage Grotesque',sans-serif;color:var(--acc)}
+.big{width:100%;background:var(--pri);color:var(--ink);border:0;border-radius:14px;padding:14px;font-weight:700;margin-top:6px}
+.pix{background:var(--card);border:1.5px dashed var(--pri);border-radius:12px;padding:10px;margin-top:8px;font-size:14px;display:flex;gap:10px;align-items:center;justify-content:space-between}
+.pix .pk{word-break:break-all}
+.pix button{flex-shrink:0;background:var(--pri2);color:var(--ink);border:0;border-radius:99px;padding:6px 12px;font-size:13px;font-weight:700}
+.sec{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:0 0 40px}
+.sec div:nth-child(1){background:var(--peach)}.sec div:nth-child(2){background:var(--mint)}.sec div:nth-child(3){background:var(--pri2)}
+.sec div{color:#43294a;border-radius:18px;padding:20px;transition:transform .2s}
+.sec div:hover{transform:translateY(-3px)}
+.sec .ic{font-size:26px;display:block;margin-bottom:6px}
+.rev{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:0 0 44px}
+.rev article{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+.rev .stars{margin-bottom:8px;display:block}
+.rev p{margin:0 0 10px;font-size:15px}
+.rev footer{all:unset;font-weight:700;font-size:14px;color:var(--acc)}
+footer{padding:26px 0 40px;color:var(--mut);font-size:14px;text-align:center}
+footer button{background:none;border:0;color:var(--mut);text-decoration:underline}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:99px;z-index:20;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.on{opacity:1}
+.err{color:#c62828;font-size:13px}
+.rise-in{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.rise-in.show{opacity:1;transform:none}
+.grid .p:nth-child(2n).show{transition-delay:.08s}
+.grid .p:nth-child(3n).show{transition-delay:.16s}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+.cartbtn.bump{animation:pulse .4s ease}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rise-in{opacity:1;transform:none}}
+</style></head><body>
+<header><div class="wrap bar"><span class="logo">🌸 Lilian Vanini Atelier</span><button class="cartbtn" id="openCart">Sacola (<span id="cnt">0</span>)</button></div></header>
+<section class="hero"><span class="blob b1" aria-hidden="true"></span><span class="blob b2" aria-hidden="true"></span><span class="blob b3" aria-hidden="true"></span><div class="wrap inner"><span class="tag">✨ Peças únicas, feitas à mão</span><h1>Cada fio conta <em>a sua</em> história</h1><p>Bolsas em crochê, quadros e camisetas com identidade. Nada em série, tudo com carinho.</p><a class="cta" href="#loja">Ver peças</a><div class="stats"><div><b>150+</b><span>peças entregues</span></div><div><b>4.9★</b><span>avaliação média</span></div><div><b>100%</b><span>feito à mão</span></div></div></div></section>
+<main class="wrap" id="loja">
+<h2 class="stitle rise-in">Destaques</h2><p class="ssub">Toque numa peça para ver fotos, preço e detalhes.</p>
+<div class="cwrap"><div class="carousel" id="carousel"></div></div>
+<h2 class="stitle rise-in">Nossas peças</h2><p class="ssub">Escolha com carinho — cada uma leva um tempinho pra ficar pronta.</p>
+<div class="tools"><input id="q" type="search" placeholder="Buscar peça" aria-label="Buscar peça"></div>
+<div class="chips" id="chips"></div>
+<div class="grid" id="grid" style="margin-top:16px"></div>
+<div class="sec rise-in"><div><span class="ic">🧵</span><h3>Feito sob encomenda</h3><p>Cada peça mostra o prazo de produção antes de você comprar.</p></div><div><span class="ic">💳</span><h3>Pix ou cartão</h3><p>Pague por Pix ou combine o link de cartão pelo WhatsApp.</p></div><div><span class="ic">📦</span><h3>Envio para todo o Brasil</h3><p>Frete calculado pelo CEP. Grátis acima de R$ 250.</p></div></div>
+<h2 class="stitle rise-in">Quem comprou, amou</h2><p class="ssub">Um carinho de quem já levou uma peça pra casa.</p>
+<div class="rev rise-in">
+<article><span class="stars">★★★★★</span><p>"A bolsa chegou linda, muito bem feita e no prazo certinho."</p><footer>— Marina A.</footer></article>
+<article><span class="stars">★★★★★</span><p>"O quadro ficou perfeito na sala, todo mundo pergunta onde comprei."</p><footer>— Renata S.</footer></article>
+<article><span class="stars">★★★★★</span><p>"Atendimento super atencioso e a camiseta é ainda mais bonita ao vivo."</p><footer>— Camila O.</footer></article>
+</div>
+</main>
+<footer><div class="wrap">© Lilian Vanini Atelier · <button id="admBtn">Área da loja</button></div></footer>
+
+<div class="ov" id="prodOv"><div class="pan" role="dialog" aria-label="Detalhe da peça">
+<div class="ph2"><h2>Detalhe da peça</h2><button class="x" data-close aria-label="Fechar">✕</button></div>
+<div id="prodBody"></div></div></div>
+
+<div class="ov" id="cartOv"><div class="pan" role="dialog" aria-label="Sacola">
+<div class="ph2"><h2>Sua sacola</h2><button class="x" data-close aria-label="Fechar">✕</button></div>
+<div id="cartBody"></div></div></div>
+
+<div class="ov" id="admOv"><div class="pan" role="dialog" aria-label="Área da loja">
+<div class="ph2"><h2>Área da loja</h2><button class="x" data-close aria-label="Fechar">✕</button></div>
+<div id="pinBox" class="f"><label for="pinEmail">E-mail</label><input id="pinEmail" type="email" autocomplete="username"><label for="pinIn">Senha</label><input id="pinIn" type="password" autocomplete="current-password"><span class="err" id="pinErr"></span><button class="big" id="pinGo">Entrar</button></div>
+<div class="f" id="admBody" style="display:none"></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/firebase@10.12.2/firebase-app-compat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/firebase@10.12.2/firebase-auth-compat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/firebase@10.12.2/firebase-firestore-compat.js"></script>
+<script>
+const $=s=>document.querySelector(s);
+const firebaseConfig={apiKey:"AIzaSyCo2KkVzlHFAt32jbNk1LQpnCV5zRpubTo",authDomain:"loja-de-bolsas.firebaseapp.com",projectId:"loja-de-bolsas",storageBucket:"loja-de-bolsas.firebasestorage.app",messagingSenderId:"750276508437",appId:"1:750276508437:web:5672519b775e9cf486871c"};
+firebase.initializeApp(firebaseConfig);
+const auth=firebase.auth(),db=firebase.firestore();
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const brl=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const load=(k,d)=>{try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}};
+const save=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+const seed=[
+{id:1,n:'Bolsa Sol de Verão',c:'Bolsas',p:189,e:'👜',t:'7 dias',d:'Bolsa em crochê 100% algodão, forrada, com alças reforçadas. Leva um toque de cor pra qualquer look de verão.'},
+{id:2,n:'Bolsa Bucket Lavanda',c:'Bolsas',p:159,e:'🛍️',t:'5 dias',d:'Modelo bucket em fio lavanda, formato estruturado e fecho com cordão. Cabe o essencial do dia a dia.'},
+{id:3,n:'Quadro Jardim de Linhas',c:'Quadros',p:120,e:'🖼️',t:'4 dias',d:'Quadro bordado à mão com moldura de madeira, tema floral delicado. Pronto para pendurar.'},
+{id:4,n:'Quadro Bordado Botânico',c:'Quadros',p:149,e:'🌿',t:'6 dias',d:'Composição botânica bordada em tela, cores suaves que combinam com qualquer ambiente.'},
+{id:5,n:'Camiseta Flor Pintada',c:'Camisetas',p:89,e:'👚',t:'3 dias',d:'Camiseta 100% algodão com pintura floral feita à mão, peça única, cada uma sai levemente diferente.'},
+{id:6,n:'Camiseta Mulher Sol',c:'Camisetas',p:95,e:'☀️',t:'3 dias',d:'Estampa artesanal exclusiva, tecido leve e confortável para o dia a dia.'}];
+const UFS=[['AC','Acre'],['AL','Alagoas'],['AP','Amapá'],['AM','Amazonas'],['BA','Bahia'],['CE','Ceará'],['DF','Distrito Federal'],['ES','Espírito Santo'],['GO','Goiás'],['MA','Maranhão'],['MT','Mato Grosso'],['MS','Mato Grosso do Sul'],['MG','Minas Gerais'],['PA','Pará'],['PB','Paraíba'],['PR','Paraná'],['PE','Pernambuco'],['PI','Piauí'],['RJ','Rio de Janeiro'],['RN','Rio Grande do Norte'],['RS','Rio Grande do Sul'],['RO','Rondônia'],['RR','Roraima'],['SC','Santa Catarina'],['SP','São Paulo'],['SE','Sergipe'],['TO','Tocantins']];
+let prods=[],cart=load('fl_cart',[]),cfg={wa:'',pix:''};
+let cat='Todas',frete=null,pay='Pix';
+db.collection('produtos').onSnapshot(snap=>{prods=snap.docs.map(d=>({id:d.id,...d.data()}));chips();grid();carousel();if($('#admBody').style.display==='')admin()});
+db.collection('config').doc('loja').onSnapshot(doc=>{if(doc.exists)Object.assign(cfg,doc.data());const pb=$('#pixbox');if(pb)pix()});
+
+function chips(){const cs=['Todas',...new Set(prods.map(p=>p.c))];
+ $('#chips').innerHTML=cs.map(c=>`<button class="chip ${c===cat?'on':''}" data-c="${esc(c)}">${esc(c)}</button>`).join('')}
+function grid(){const q=$('#q').value.toLowerCase();
+ const l=prods.filter(p=>!p.blocked&&(cat==='Todas'||p.c===cat)&&p.n.toLowerCase().includes(q));
+ $('#grid').innerHTML=l.length?l.map((p,i)=>`<article class="p rise-in" data-view="${p.id}">${p.oos?'<span class="badge oos">Esgotada</span>':i===0?'<span class="badge">Mais vendida</span>':''}<div class="ph" style="${p.img?`background-image:url(${p.img})`:''}">${p.img?'':esc(p.e||'🎀')}</div><div class="pb"><small>${esc(p.c)} · produção: ${esc(p.t||'sob consulta')}</small><h3>${esc(p.n)}</h3><span class="stars">★★★★★</span><span class="price">${brl(p.p)}</span><button class="add" data-add="${p.id}" ${p.oos?'disabled':''}>${p.oos?'Esgotada':'Adicionar à sacola'}</button></div></article>`).join(''):'<p class="empty">Nenhuma peça encontrada. Tente outra busca ou categoria.</p>'}
+function carousel(){const l=prods.filter(p=>!p.blocked);if(!l.length){$('#carousel').innerHTML='';return}
+ const html=l.map(p=>`<button class="cItem" data-view="${p.id}"><div class="ph" style="${p.img?`background-image:url(${p.img})`:''}">${p.img?'':esc(p.e||'🎀')}</div><div class="cb"><small>${esc(p.c)}</small><b>${esc(p.n)}</b><span>${p.oos?'Esgotada':brl(p.p)}</span></div></button>`).join('');
+ const el=$('#carousel');el.innerHTML=html+html;
+ el.style.animationDuration=(l.length*3.2)+'s'}
+function viewProduct(id){const p=prods.find(x=>x.id==id);if(!p)return;
+ $('#prodBody').innerHTML=`<div class="pd-img" style="${p.img?`background-image:url(${p.img})`:''}">${p.img?'':esc(p.e||'🎀')}</div><small>${esc(p.c)} · produção: ${esc(p.t||'sob consulta')}</small><h2>${esc(p.n)}</h2><span class="stars">★★★★★</span><p class="pd-desc">${esc(p.d||'Peça artesanal feita à mão, com todo cuidado do nosso ateliê.')}</p><span class="price" style="font-size:26px">${brl(p.p)}</span><button class="big" data-add="${p.id}" ${p.oos?'disabled':''}>${p.oos?'Peça esgotada':'Adicionar à sacola'}</button>`;
+ open('#prodOv')}
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),1800)}
+function sub(){return cart.reduce((s,i)=>{const p=prods.find(x=>x.id===i.id);return s+(p?p.p*i.q:0)},0)}
+function fr(cep){cep=cep.replace(/\D/g,'');if(cep.length!==8)return null;
+ const t={0:18.9,1:18.9,2:22.9,3:24.9,4:29.9,5:32.9,6:33.9,7:30.9,8:26.9,9:28.9};return sub()>=250?0:t[cep[0]]}
+const CEP_UF=[[0,5,'SP'],[6,9,'SP'],[10,19,'SP'],[20,23,'RJ'],[24,28,'RJ'],[29,29,'ES'],[30,39,'MG'],[40,48,'BA'],[49,49,'SE'],[50,56,'PE'],[57,57,'AL'],[58,58,'PB'],[59,59,'RN'],[60,63,'CE'],[64,64,'PI'],[65,65,'MA'],[66,68,'PA'],[69,69,'AM'],[70,73,'DF'],[74,76,'GO'],[77,77,'TO'],[78,78,'MT'],[79,79,'MS'],[80,87,'PR'],[88,89,'SC'],[90,99,'RS']];
+function ufGuess(cep){const n=+cep.slice(0,2);for(const[a,b,uf]of CEP_UF)if(n>=a&&n<=b)return uf;return null}
+function saveCart(){save('fl_cart',cart);$('#cnt').textContent=cart.reduce((s,i)=>s+i.q,0)}
+function renderCart(){
+ const items=cart.map(i=>({i,p:prods.find(x=>x.id===i.id)})).filter(x=>x.p);
+ if(!items.length){$('#cartBody').innerHTML='<p class="empty">Sua sacola está vazia. Escolha uma peça para começar.</p>';return}
+ const s=sub(),f=frete===null?0:frete;
+ $('#cartBody').innerHTML=items.map(({i,p})=>`<div class="row"><span class="em">${esc(p.e||'🎀')}</span><div class="t"><b>${esc(p.n)}</b><br><small>${brl(p.p)}</small></div><div class="qty"><button data-m="${p.id}" aria-label="Diminuir">−</button> ${i.q} <button data-a="${p.id}" aria-label="Aumentar">+</button></div><button class="x" data-rm="${p.id}" aria-label="Remover ${esc(p.n)} da sacola">🗑</button></div>`).join('')+
+ `<div class="f"><label for="nm">Nome completo *</label><input id="nm" autocomplete="name" required><label for="tel">WhatsApp *</label><input id="tel" type="tel" autocomplete="tel" required><label for="cep">CEP *</label><input id="cep" inputmode="numeric" maxlength="9" placeholder="00000-000" required><span class="err" id="cepe"></span><label for="rua">Rua *</label><input id="rua" autocomplete="address-line1" required><label for="num">Número *</label><input id="num" inputmode="numeric" required><label for="comp">Complemento</label><input id="comp" placeholder="Apto, bloco… (opcional)"><label for="bai">Bairro *</label><input id="bai" required><label for="cid">Cidade *</label><input id="cid" autocomplete="address-level2" required><label for="uf">Estado *</label><select id="uf" required><option value="">Selecione</option>${UFS.map(([s,n])=>`<option value="${s}">${n}</option>`).join('')}</select><label for="pg">Pagamento *</label><select id="pg"><option>Pix</option><option>Cartão (link pelo WhatsApp)</option></select><span class="err" id="forme"></span></div>
+ <div class="sum"><div><span>Peças</span><span>${brl(s)}</span></div><div><span>Frete (estimativa)</span><span>${frete===null?'informe o CEP':frete===0?'Grátis':brl(f)}</span></div><div class="tot"><span>Total</span><span>${brl(s+f)}</span></div></div>
+ <div id="pixbox"></div><button class="big" id="fin">Finalizar pelo WhatsApp</button>`;
+ pix()}
+function pix(){const b=$('#pixbox');if(!b)return;b.innerHTML=$('#pg').value==='Pix'?`<div class="pix"><span class="pk">Chave Pix: <b>${esc(cfg.pix)}</b></span><button id="pixcp" type="button">Copiar</button></div>`:''}
+async function copyPix(){try{await navigator.clipboard.writeText(cfg.pix);toast('Chave Pix copiada')}catch(e){const ta=document.createElement('textarea');ta.value=cfg.pix;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');toast('Chave Pix copiada')}catch(e2){toast('Não foi possível copiar')}ta.remove()}}
+function open(id){$(id).classList.add('open')}
+function closeAll(){document.querySelectorAll('.ov').forEach(o=>o.classList.remove('open'))}
+
+let editId=null;
+function admin(){
+ const ed=editId?prods.find(p=>p.id===editId):null;
+ $('#admBody').innerHTML=`<h3>${ed?'Editar peça':'Nova peça'}</h3><label for="an">Nome</label><input id="an" value="${ed?esc(ed.n):''}"><label for="ap">Preço (R$)</label><input id="ap" type="number" min="0" step="0.01" value="${ed?ed.p:''}"><label for="ac">Categoria</label><input id="ac" placeholder="Bolsas, Quadros, Camisetas…" value="${ed?esc(ed.c):''}"><label for="at">Prazo de produção</label><input id="at" placeholder="5 dias" value="${ed?esc(ed.t||''):''}"><label for="ae">Emoji (sem foto)</label><input id="ae" value="${ed?esc(ed.e||'🎀'):'🎀'}"><label for="af">Foto (opcional)</label><input id="af" type="file" accept="image/*">
+ <label class="chk"><input type="checkbox" id="aoos" ${ed&&ed.oos?'checked':''}> Marcar como esgotado</label>
+ <label class="chk"><input type="checkbox" id="abl" ${ed&&ed.blocked?'checked':''}> Bloquear temporariamente (some da loja)</label>
+ <button class="big" id="asv">${ed?'Salvar alterações':'Salvar peça'}</button>${ed?'<button class="big" id="acancel" style="background:var(--soft);margin-top:8px">Cancelar edição</button>':''}
+ <h3 style="margin-top:22px">Peças cadastradas</h3>${prods.map(p=>`<div class="row"><div class="t">${esc(p.n)} · ${brl(p.p)}${p.oos?' · <b>esgotada</b>':''}${p.blocked?' · <b>bloqueada</b>':''}</div><button class="x" data-edit="${p.id}" aria-label="Editar ${esc(p.n)}">✎</button><button class="x" data-del="${p.id}" aria-label="Excluir ${esc(p.n)}">🗑</button></div>`).join('')}
+ <h3 style="margin-top:22px">Dados da loja</h3><label for="cw">WhatsApp (com 55 + DDD)</label><input id="cw" value="${esc(cfg.wa||'')}"><label for="cx">Chave Pix</label><input id="cx" value="${esc(cfg.pix||'')}"><button class="big" id="csv">Salvar dados</button>
+ <button class="big" id="logout" style="background:var(--soft);margin-top:18px">Sair da Área da loja</button>
+ <p><small>Os dados ficam salvos no banco de dados, compartilhados entre todos os aparelhos e logins.</small></p>`}
+function shrink(file){return new Promise(r=>{const fr=new FileReader();fr.onload=()=>{const im=new Image();im.onload=()=>{const s=Math.min(1,500/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*s;c.height=im.height*s;c.getContext('2d').drawImage(im,0,0,c.width,c.height);r(c.toDataURL('image/jpeg',.75))};im.src=fr.result};fr.readAsDataURL(file)})}
+
+document.addEventListener('click',async e=>{const t=e.target;const view=t.closest('[data-view]');
+ if(t.dataset.c){cat=t.dataset.c;chips();grid()}
+ if(view&&!t.dataset.add){viewProduct(view.dataset.view)}
+ if(t.dataset.add){const id=t.dataset.add,i=cart.find(x=>x.id===id);i?i.q++:cart.push({id,q:1});saveCart();toast('Adicionada à sacola');if($('#prodOv').classList.contains('open'))closeAll();
+  const cb=$('#openCart');cb.classList.remove('bump');void cb.offsetWidth;cb.classList.add('bump')}
+ if(t.dataset.a){cart.find(x=>x.id==t.dataset.a).q++;saveCart();renderCart()}
+ if(t.dataset.m){const i=cart.find(x=>x.id==t.dataset.m);i.q--;if(i.q<1)cart=cart.filter(x=>x!==i);saveCart();renderCart()}
+ if(t.dataset.rm){cart=cart.filter(x=>x.id!=t.dataset.rm);saveCart();renderCart();toast('Peça removida da sacola')}
+ if('close' in t.dataset||t.classList.contains('ov')){closeAll();$('#pinBox').style.display='';$('#admBody').style.display='none';$('#pinIn').value='';if($('#pinEmail'))$('#pinEmail').value='';$('#pinErr').textContent=''}
+ if(t.id==='openCart'){renderCart();open('#cartOv')}
+ if(t.id==='admBtn'){open('#admOv');setTimeout(()=>$('#pinIn').focus(),50)}
+ if(t.id==='pinGo'){const em=$('#pinEmail').value.trim(),sp=$('#pinIn').value;$('#pinErr').textContent='';auth.signInWithEmailAndPassword(em,sp).then(()=>{$('#pinBox').style.display='none';$('#admBody').style.display='';admin()}).catch(()=>{$('#pinErr').textContent='E-mail ou senha incorretos'})}
+ if(t.id==='fin'){const f=id=>$('#'+id).value.trim();
+  const req={nm:'nome',tel:'WhatsApp',cep:'CEP',rua:'rua',num:'número',bai:'bairro',cid:'cidade',uf:'estado'};
+  const faltando=Object.keys(req).filter(id=>!f(id));
+  if(faltando.length||frete===null){$('#forme').textContent='Preencha todos os campos com *';toast('Preencha todos os dados obrigatórios');return}
+  $('#forme').textContent='';
+  const s=sub(),lines=cart.map(i=>{const p=prods.find(x=>x.id===i.id);return p?`• ${i.q}x ${p.n} (${brl(p.p*i.q)})`:''}).join('\n');
+  const end=`${f('rua')}, ${f('num')}${f('comp')?' - '+f('comp'):''} - ${f('bai')}, ${f('cid')}/${f('uf').toUpperCase()}`;
+  const m=`Olá! Quero finalizar meu pedido 🌸\n\n${lines}\n\nFrete: ${frete===0?'Grátis':brl(frete)}\nTotal: ${brl(s+frete)}\nPagamento: ${$('#pg').value}\n\nNome: ${f('nm')}\nTel: ${f('tel')}\nCEP: ${$('#cep').value}\nEndereço: ${end}`;
+  window.open('https://wa.me/'+cfg.wa+'?text='+encodeURIComponent(m),'_blank');}
+ if(t.id==='asv'){const n=$('#an').value.trim(),pr=parseFloat($('#ap').value);if(!n||!(pr>=0)){toast('Informe nome e preço');return}
+  const f=$('#af').files[0],img=f?await shrink(f):null,oos=$('#aoos').checked,blocked=$('#abl').checked;
+  const data={n,p:pr,c:$('#ac').value.trim()||'Outros',t:$('#at').value.trim(),e:$('#ae').value||'🎀',oos,blocked};
+  if(img)data.img=img;
+  const id=editId;editId=null;
+  try{if(id)await db.collection('produtos').doc(id).update(data);else await db.collection('produtos').add(data);
+  cat='Todas';toast('Peça salva')}catch(err){toast('Erro ao salvar: entre novamente')}}
+ if(t.dataset.edit){editId=t.dataset.edit;admin()}
+ if(t.id==='acancel'){editId=null;admin()}
+ if(t.dataset.del){const id=t.dataset.del;try{await db.collection('produtos').doc(id).delete()}catch(err){toast('Erro ao excluir')}cart=cart.filter(i=>i.id!=id);saveCart()}
+ if(t.id==='csv'){const wa=$('#cw').value.replace(/\D/g,''),pix=$('#cx').value.trim();try{await db.collection('config').doc('loja').set({wa,pix},{merge:true});toast('Dados salvos')}catch(err){toast('Erro ao salvar')}}
+ if(t.id==='logout'){auth.signOut();closeAll();$('#pinBox').style.display='';$('#admBody').style.display='none'}
+ if(t.id==='pixcp')copyPix();
+});
+document.addEventListener('input',e=>{
+ if(e.target.id==='q')grid();
+ if(e.target.id==='cep'){let v=e.target.value.replace(/\D/g,'').slice(0,8);e.target.value=v.length>5?v.slice(0,5)+'-'+v.slice(5):v;
+  frete=fr(v);$('#cepe').textContent=v.length===8?'':'';const ids=['nm','tel','rua','num','comp','bai','cid','uf','pg'];const keep=e.target.value,vals=ids.map(id=>$('#'+id).value);
+  const done=v.length===8,guess=done?ufGuess(v):null;
+  renderCart();$('#cep').value=keep;ids.forEach((id,i)=>$('#'+id).value=vals[i]);
+  if(guess&&!$('#uf').value)$('#uf').value=guess;
+  if(done)$('#rua').focus();else $('#cep').focus()}
+ if(e.target.id==='pg')pix()});
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.id==='pinIn')$('#pinGo').click()});
+chips();grid();carousel();saveCart();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});
+function observeRise(){document.querySelectorAll('.rise-in:not(.show)').forEach(el=>io.observe(el))}
+observeRise();
+new MutationObserver(observeRise).observe($('#grid'),{childList:true});
+</script></body></html>
